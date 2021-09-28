@@ -1,0 +1,249 @@
+body {
+    background-color: rgba(11, 166, 255, 0.356);
+    margin:0;
+}
+
+.header {
+    height:5rem;
+    width:100%;
+    background-color:rgb(200, 229, 255);
+    display:flex;
+    justify-content:space-between;
+    position: fixed;
+    z-index: 1;
+    border-bottom: .5rem solid rgba(0, 0, 255, 0.5);
+    opacity: 0.95;
+}
+
+.header-logo {
+    flex-grow: 1;
+    display:flex;
+}
+
+.jerryfish {
+    margin-left: 1rem;
+    height: 5rem;
+}
+
+#Darse {
+    color:black;
+    vertical-align: middle;
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    font-family: 'arial black';
+}
+
+.header ul {
+    margin-right: 7rem;
+    flex-grow: 2;
+    display:flex;
+    justify-content: flex-end;
+}
+
+li {
+    list-style:none;
+}
+
+.header li { 
+    margin: 1rem 0rem 0rem 10rem;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.button {
+    position: relative;
+}
+
+.button:hover {
+    transition:all .3s ease 0s;
+    transform: scale(1.2);
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: rgb(0, 140, 255);
+    transform: scale(0,1);
+    transform-origin: left;
+    transition: 0.2s;
+}
+
+.button:hover::before {
+    transform: scale(1);
+}
+
+.contents {
+    padding-top: 5rem;
+    width: 80rem;
+    margin: 0 auto;
+    background-color:  rgb(243, 243, 253);
+    text-align: center;
+    display: flex;
+}
+
+.explanation {
+    background-color: rgba(224, 250, 255, 0.466);
+    width: 70%;
+    text-align:left;
+    margin-top:4rem
+}
+
+.explanation span{
+    color: red;
+}
+
+.main {
+    margin: 5rem 5rem 0 5rem;
+}
+
+.main img{
+    width: 100%;
+    margin: 3rem 0;
+}
+
+.main video {
+    width: 100%;
+    margin: 3rem 0;
+}
+
+.code {
+    background-color: white;
+    display: inline-block;
+}
+
+.button-ex {
+    width: 100%;
+    height: 10rem;
+    background-color: white;
+    text-align: center;
+    position: relative;
+}
+
+.button-ex a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.link {
+    color: blue;
+    border-bottom: 0.1rem solid ;
+}
+
+.position-ex {
+    background-color: white;
+    padding: 3rem;
+}
+
+.position-ex ul {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(118, 245, 118);
+}
+
+#relative1 {
+    background-color: red;
+    height: 5rem;
+    width: 30%;
+    position: relative;
+}
+
+#relative1::before {
+    content: "absolute1";
+    background-color: yellow;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#relative2 {
+    background-color: red;
+    height: 5rem;
+    width: 30%;
+    position: relative;
+}
+
+#relative2::before {
+    content: "absolute2";
+    background-color: yellow;
+    position: absolute;
+    height: 2rem;
+    width: 50%;
+    right: 0;
+}
+
+#relative3 {
+    background-color: red;
+    width: 30%;
+    height: 5rem;
+    position: relative;
+}
+
+#relative3::before {
+    content: "absolute3";
+    background-color: yellow;
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    left: 0;
+}
+
+.greeting {
+    background-color: rgba(224, 250, 255, 0.466);
+    width: 30%;
+}
+
+.s-jerryfish  {
+    width: 3rem;
+}
+
+#upjerry {
+    margin: 0.8rem 1rem 1rem 1rem;
+    float: left;
+}
+
+
+#plofile-image {
+    height: 12rem;
+    width: 50%;
+    margin: 2rem auto;
+    background-color: rgb(196, 226, 255);
+}
+
+#jerryfish_facial {
+    height: 100%;
+    width: 10rem;
+}
+
+.greeting ul {
+    width:98%;
+    padding: 1rem 0;
+    border: 0.1rem solid hsl(194, 89%, 81%);
+}
+
+.greeting li {
+    margin: 0.5rem;
+}
+
+#first {
+    height: 1rem;
+    background-color: rgba(231, 67, 38, 0.521);
+}
+
+#second {
+    height: 3rem;
+    background-color: rgba(214, 64, 38, 0.589);
+}
+
+#third {
+    height: 10rem;
+    background-color: rgba(206, 53, 26, 0.61);
+}
