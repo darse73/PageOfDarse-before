@@ -27,6 +27,7 @@ body {
 
 #Darse {
     color:black;
+    vertical-align: middle;
     font-size: 2rem;
     margin-left: 0.5rem;
     font-family: 'arial black';
@@ -83,74 +84,67 @@ a {
 .contents {
     padding-top: 5rem;
     width: 80rem;
-    margin: 0 10%;
+    margin: 0 auto;
     background-color:  rgb(243, 243, 253);
     text-align: center;
     display: flex;
 }
 
-.update-page {
-    background-color: rgba(224, 250, 255, 0.466);
-    width: 70%;
-    text-align:left;
-    margin-top:1rem
+.code {
+    
 }
 
-.page {
-    margin: 0 2rem 2rem 5rem;
-    padding: 1rem;
-    border: 0.2rem solid rgb(2, 61, 255);
-    display: grid;
-    grid-template-rows: 2rem 11rem;
-    grid-template-columns: 23.4rem 23.4rem;
-    background-color: rgb(255, 255, 255);
+.code-header {
+    background-color: blue;
 }
 
-.page:hover {
-    transform: scale(1.01);
-    transition: all 0.3s ease 0s;
+.code-header ul{
+    display: flex;
+    justify-content: space-between;
+    padding-inline-start: 10%;
+    padding-inline-end: 10%;
 }
 
-h3 {
-    margin: 0;
-}
-
-.title {
-    margin-bottom: 0.5rem;
-    grid-row: 1;
-    grid-column: 1;
-}
-
-.page img{
-    width: 21rem;
-    grid-row: 2;
-    grid-column: 1;
-}
-
-.page video{
-    width: 100%;
-    height: 100%;
-}
-
-.comment {
-    grid-row: 1/3;
-    grid-column: 2;
-    text-align: left;
-    padding-left: 1rem;
-}
-.greeting {
-    background-color: rgba(224, 250, 255, 0.466);
-    width: 30%;
-}
-
-.s-jerryfish  {
-    width: 3rem;
+.code-main {
+    background-color: rgb(116, 116, 248);
 }
 
 #upjerry {
     margin: 0.8rem 1rem 1rem 1rem;
     float: left;
 }
+
+.s-jerryfish  {
+    width: 3rem;
+}
+
+.explanation {
+    background-color: rgba(224, 250, 255, 0.466);
+    width: 70%;
+    text-align:left;
+    margin-top:4rem
+}
+
+.main {
+    margin: 5rem 5rem 0 5rem;
+}
+
+.main img{
+    width: 100%;
+    margin: 3rem 0 0 0;
+}
+
+#go-the-work {
+    margin-bottom: 3rem;
+}
+
+
+.greeting {
+    background-color: rgba(224, 250, 255, 0.466);
+    width: 30%;
+}
+
+
 
 
 #plofile-image {
@@ -175,19 +169,7 @@ h3 {
     margin: 0.5rem;
 }
 
-#first {
-    height: 1rem;
-    background-color: rgba(231, 67, 38, 0.521);
-}
-
-#second {
-    height: 3rem;
-    background-color: rgba(214, 64, 38, 0.589);
-}
-
-#third {
+.footer {
+    background: linear-gradient(rgba(243, 86, 39, 0.705),rgb(133, 61, 28));
     height: 10rem;
-    background-color: rgba(206, 53, 26, 0.61);
 }
-
-

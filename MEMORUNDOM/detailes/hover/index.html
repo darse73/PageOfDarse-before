@@ -113,7 +113,7 @@
             .position-ex ul {<br>
     　            display: flex;<br>
       　          justify-content: space-between;<br>
-                  background-color: rgb(118, 245, 118);<br>
+             　     background-color: rgb(118, 245, 118);<br>
             }<br>
             <br>
             #relative1 {<br>
@@ -166,11 +166,115 @@
             </p>
             <p>今回使ったパターンは relative1 absolute1 で、他の二つはその他の例として載せています。</p>
             <p>position:absolute と、 bottom: 0; の説明が多くなりましたが、続きから説明していきます。</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+            <p>width: 100%; と、height: 0.2rem; で、細さ0.2remで長さ100％の線を作っています。</p>
+            <p>transform: scale(0,1);とは、簡単に言うと「今はこの状態でいてね」ということです。<br>
+               詳しく見てみます。(0,1) は、x方向の大きさを0（もともとの大きさの0倍）、y方向の大きさを1（もともとの大きさの1倍）ということを表しています。<br>
+               つまり、元々大きさは height: 0.2rem; width: 100%; （左の状態は scale(1,1) の状態である）で決まっているけど、今は scale(0,1) の状態でいてねということです。</p>
+            <div class="scale-ex">
+              <ul>
+                <li id="scale-ex1">scale(1,1)</li>
+                <li id="scale-ex2">scale(0.5,1.5)</li>
+                <li id="scale-ex3">scale(1.5,0.5)</li>
+              </ul>
+            </div>
+            <div class="code">
+              HTML<br>
+              ＜div class="scale-ex"＞<br>
+              　＜ul＞<br>
+                　＜li id="scale-ex1"＞scale(1,1)＜/li＞<br>
+                　＜li id="scale-ex2"＞scale(0.5,1.5)＜/li＞<br>
+                　＜li id="scale-ex3"＞scale(1.5,0.5)＜/li＞<br>
+              　＜/ul＞<br>
+              ＜/div＞<br>
+              <br>
+              CSS<br>
+              .scale-ex {<br>
+              　  background-color: white;<br>
+               　 height: 12rem;<br>
+                　margin-bottom: 1rem;<br>
+            }<br>
+            <br>
+            .scale-ex ul{<br>
+             　   display: flex;<br>
+            }<br>
+            <br>
+            .scale-ex li{<br>
+               　 height: 5rem;<br>
+                　width: 5rem;<br>
+                　margin: 3rem 2rem;<br>
+            }<br>
+            <br>
+            #scale-ex1 {<br>
+                　background-color: turquoise;<br>
+                　transform: scale(1,1);<br>
+            }<br>
+            <br>
+            #scale-ex2 {<br>
+                　background-color: turquoise;<br>
+                　transform: scale(0.5,1.5);<br>
+            }<br>
+            <br>
+            #scale-ex3 {<br>
+                　background-color: turquoise;<br>
+                　transform: scale(1.5,0.5);<br>
+            }<br>
+              
+            </div>
+            <p>transform-origin:left は、左側から動きを始めることを表しています。<br>
+               もし transform-origin: right; ならば、右側から動きが始まります。</p>
+            <p>transition: 0.2s; は、動きが終わる秒数を表しており、もし transition: 1s; ならば、1sで動きが終わります。</p>
+            <p>これで下準備のレール敷きは終わったので、次はhover時に動きを行うように命令する指令を作っていきます。</p>
+            <p class="code">HTML<br>
+              ＜div class="button"＞＜a href=""＞WORKS＜/a＞＜/div＞<br><br>
+              CSS<br>
+              .button {<br>
+              　 position:relative;<br>
+              }<br>
+              <br>
+              .button::before {<br>
+               　 content: "";<br>
+　                 position: absolute;<br>
+ 　               bottom: 0;<br>
+   　             width: 100%;<br>
+     　           height: 0.2rem;<br>
+       　         background-color: rgb(0, 140, 255);<br>
+         　       transform: scale(0,1);<br>
+           　     transform-origin: left;<br>
+             　   transition: 0.2s;<br>
+              }　<br><br>
+              .button:hover::before {<br>
+              　transform: scale(1);<br>
+            }<br>
+              <br></p>
+              <p>hover時に動きを行う命令は、button:hover::before のこれだけです。</p>
+              <p>ここで出てきた :hover というのは、hover時ということです。</p>
+              <p>.button:hover::before ではなく、.button::before:hover という書き方でもいいのではないかと試してみたのですが、機能しなかったので、順番は変えないようにしてください。</p>
+              <p>transform: scale(1); とは、transform: scale(1,1) と同じ意味で、x方向の大きさを1倍、y方向の大きさを1倍にするという意味です。</p>
+              <p>まとめると、.button::before をhover時に scale(1) にするということです。</p>
+              <div class="button-ex">
+                <div class="button-ex2"><a href="">WORKS</a></div> 
+              </div>
+              <p>こうなりました。</p>
+              <p>ちなみに、hover時に文字が大きくなるようなコードも書いておきます。</p>
+              <div class="code">HTML<br>
+                ＜div class="button"＞＜a href=""＞WORKS＜/a＞＜/div＞<br><br>
+                CSS<br>
+                .button {<br>
+                  display: inline-brock;<br>
+                }<br><br>
+                .button:hover {<br>
+                 　transition:all .3s ease 0s;<br>
+                  　transform: scale(1.2);<br>
+              }
+              </div>
+              <div class="scale-EX">
+                <div class="scale-EX2"><a href="">WORKS</a></div>
+              </div>
+
+              <p>こんな感じです。</p>
+              <p>display: inline-brock; を指定しなかったらWORKSがずれながら大きくなる可能性があります。</p>
+              <p>その理由は、div のデフォルトが display:block; となっており、brock 要素は横いっぱいに広がります。<br>
+                 対して inline-brock 要素は内容量に合わせて大きさが調整されるので、ずれることが無くなるというわけです。</p>
         </div>
 
     </div>
